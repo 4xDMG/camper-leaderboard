@@ -1,18 +1,24 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import CamperList from './components/camper_list';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      campers: [],
+      pointType: 'Last 30 days' 
+    }
+  }
+  
   render() {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+          <h2>freeCodeCamp Camper Leaderboard</h2>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <CamperList />
       </div>
     );
   }
