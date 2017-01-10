@@ -14,12 +14,16 @@ class PointTypeSelector extends Component {
 
 	render() {
 		return (
+			<tbody>
+
 			<tr>
 				<th>Rank</th>
 				<th>Camper</th>
 				<th ref='recent' className="active">Last 30 days</th>
 				<th ref='alltime'>All time</th>
 			</tr>
+
+			</tbody>
 		)
 	}
 }

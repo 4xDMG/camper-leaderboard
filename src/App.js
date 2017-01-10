@@ -14,16 +14,20 @@ class App extends Component {
       pointType: '',
     }
 
-    this.onPointTypeChange('recent');
+    this.getData(recentList);
   }
 
-  onPointTypeChange(pointType) {
-      if (pointType === 'recent') {
-        this.setState({
-          campers: [recentList],
-          pointType: 'recent'
-        });
-      }
+  getData(url) {
+    fetch(url)
+    .then(
+      response => response.json()
+    )
+    .then (
+      previousJSON => console.log(previousJSON.name)
+    )
+    .catch(
+      error => console.log(error.message)
+    );
   }
   
   render() {
