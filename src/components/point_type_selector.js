@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import App from '../App.js'
 
 class PointTypeSelector extends Component {
 	constructor(props) {
@@ -7,23 +8,24 @@ class PointTypeSelector extends Component {
 		this.state = { pointType: '' }
 	}
 
-	handleChange(pointType) {
-		this.setState({pointType});
-		this.props.onPointTypeChange(pointType);
+	handleChange(points) {
+		App.props.setState({pointType: points});
+		console.log(this.state);
+		return this.state;
 	}
 
 	render() {
 		return (
-			<tbody>
+			<thead>
 
 			<tr>
 				<th>Rank</th>
 				<th>Camper</th>
-				<th ref='recent' className="active">Last 30 days</th>
-				<th ref='alltime'>All time</th>
+				<th ref='recent' className="active" onClick={() => this.handleChange('recent')}>Last 30 days</th>
+				<th ref='alltime' onClick={() => this.handleChange('allTime')}>All time</th>
 			</tr>
 
-			</tbody>
+			</thead>
 		)
 	}
 }
