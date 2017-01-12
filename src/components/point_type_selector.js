@@ -9,7 +9,7 @@ class PointTypeSelector extends Component {
 	}
 
 	handleChange(points) {
-		App.props.setState({pointType: points});
+		this.setState({pointType: points});
 		console.log(this.state);
 		return this.state;
 	}

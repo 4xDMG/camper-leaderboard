@@ -32,7 +32,6 @@ class App extends Component {
           campers: camperArr,
           pointType: url[0]
         })
-        console.log(this.state);
       }
     )
     .catch(
@@ -46,7 +45,7 @@ class App extends Component {
         <div className="App-header">
           <h2>freeCodeCamp Camper Leaderboard</h2>
         </div>
-        <CamperList />
+        <CamperList camperList = {this.state.campers} />
       </div>
     );
   }
