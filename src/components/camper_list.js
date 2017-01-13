@@ -1,24 +1,25 @@
 import React from 'react';
-import PointTypeSelector from './point_type_selector';
 import CamperListItem from './camper_list_item';
 
 const CamperList = (props) => {
-	console.log(props.camperList[0])
-
-	const camperList = props.camperList.map((username) => {
+	const camperList = props.camperList.map((camper, count) => {
+		count++;
 		return (
-			<CamperListItem 
-				currentCamper = {props.camperList}
-			/>
+				<CamperListItem 
+					camper={camper}
+					key={count}
+					rank={count}
+				/>
+
 		)
 	});
 
 	return (
-		<table>
-			<PointTypeSelector />
-
-		</table>
+		<tbody>
+			{camperList}
+		</tbody>
 	)
+
 }
 
 export default CamperList;

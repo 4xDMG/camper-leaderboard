@@ -1,13 +1,17 @@
 import React from 'react';
 
-const CamperListItem =(currentCamper) => {
-	console.log(currentCamper);
+const CamperListItem =(props) => {
+	let rank = props.rank;
+	let username = props.camper.username;
+	let imgUrl = props.camper.img;
+	let recent = props.camper.recent;
+	let alltime = props.camper.alltime;
 	return (
 		<tr>
-			<td></td>
-			<td><img src={ currentCamper.img } /> {currentCamper.username}</td>
-			<td>{currentCamper.recent}</td>
-			<td>{currentCamper.alltime}</td>
+			<td className='points'>{rank}</td>
+			<td><img src={ imgUrl } /> {username}</td>
+			<td className='points'>{recent}</td>
+			<td className='points'>{alltime}</td>
 		</tr>
 	)
 }

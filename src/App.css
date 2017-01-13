@@ -18,7 +18,19 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.camper-list img {
+  height: 40px;
+  width: auto;
+}
+
+.camper-list {
+  text-align: left;
+}
+
+.camper-list th {
+  padding: 10px;
+}
+
+.points {
+  text-align: center;
 }

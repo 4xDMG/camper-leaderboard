@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import CamperList from './components/camper_list';
+import PointTypeSelector from './components/point_type_selector';
 
 const recentList = ['recent', 'https://fcctop100.herokuapp.com/api/fccusers/top/recent'];
 const allTimeList = ['allTime', 'https://fcctop100.herokuapp.com/api/fccusers/top/alltime'];
@@ -25,7 +26,7 @@ class App extends Component {
     .then (
       previousJSON => {
         let camperArr = [];
-        previousJSON.map((camper) => {
+        previousJSON.map((camper, count) => {
           camperArr.push(camper)
         })
         this.setState({
@@ -45,7 +46,12 @@ class App extends Component {
         <div className="App-header">
           <h2>freeCodeCamp Camper Leaderboard</h2>
         </div>
-        <CamperList camperList = {this.state.campers} />
+        <div className="camper-list">
+          <table>
+            <PointTypeSelector />
+            <CamperList camperList={this.state.campers} />
+          </table>
+        </div>
       </div>
     );
   }
