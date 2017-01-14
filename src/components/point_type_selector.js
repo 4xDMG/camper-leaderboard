@@ -1,17 +1,23 @@
 import React, {Component} from 'react';
-import App from '../App.js'
 
 class PointTypeSelector extends Component {
 	constructor(props) {
 		super(props);
 
-		this.state = { pointType: '' }
+		this.state = { active: 'recent' }
 	}
 
-	handleChange(points) {
-		this.setState({pointType: points});
-		console.log(this.state);
-		return this.state;
+	handleChange(points, key) {
+		if (this.refs[key].classList.contains('active')) {
+			return 0;
+		} else {
+			let removeActive = document.getElementsByClassName('active');
+			while (removeActive.length) {
+				removeActive[0].classList.remove('active');
+			}
+			this.props.getData(points);
+			this.refs[key].classList.add('active');
+		}	
 	}
 
 	render() {
@@ -19,10 +25,10 @@ class PointTypeSelector extends Component {
 			<thead>
 
 			<tr>
-				<th>Rank</th>
-				<th>Camper</th>
-				<th ref='recent' className="active" onClick={() => this.handleChange('recent')}>Last 30 days</th>
-				<th ref='alltime' onClick={() => this.handleChange('allTime')}>All time</th>
+				<th className='points'>Rank</th>
+				<th className='user'>Camper</th>
+				<th ref='recent' className="active points selector" onClick={() => this.handleChange(this.props.recent, 'recent')}>Last 30 days</th>
+				<th ref='alltime' className='points selector' onClick={() => this.handleChange(this.props.alltime, 'alltime')}>All time</th>
 			</tr>
 
 			</thead>

@@ -9,7 +9,7 @@ const CamperListItem =(props) => {
 	return (
 		<tr>
 			<td className='points'>{rank}</td>
-			<td><img src={ imgUrl } /> {username}</td>
+			<td className='user'><img src={ imgUrl } alt={username} /> {username}</td>
 			<td className='points'>{recent}</td>
 			<td className='points'>{alltime}</td>
 		</tr>

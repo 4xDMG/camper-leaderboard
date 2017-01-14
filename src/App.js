@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './App.scss';
 import CamperList from './components/camper_list';
 import PointTypeSelector from './components/point_type_selector';
 
@@ -26,8 +26,9 @@ class App extends Component {
     .then (
       previousJSON => {
         let camperArr = [];
-        previousJSON.map((camper, count) => {
-          camperArr.push(camper)
+        previousJSON.map((camper) => {
+          camperArr.push(camper);
+          return true;
         })
         this.setState({
           campers: camperArr,
@@ -44,11 +45,11 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h2>freeCodeCamp Camper Leaderboard</h2>
+          <h2>freeCodeCamp<i className="fa fa-free-code-camp" aria-hidden="true"></i> Camper Leaderboard</h2>
         </div>
         <div className="camper-list">
           <table>
-            <PointTypeSelector />
+            <PointTypeSelector getData={this.getData.bind(this)} recent={recentList} alltime={allTimeList} />
             <CamperList camperList={this.state.campers} />
           </table>
         </div>

@@ -1,0 +1,96 @@
+.App {
+  text-align: center;
+  width: 100%;
+  background-color: #FEDCD2
+}
+
+.App-header {
+  background-color: #BFD8D2;
+  height: 100px;
+  padding: 20px;
+  color: #DF744A;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.points {
+  text-align: center;
+}
+
+.camper-list {
+  position: relative;
+  display: table;
+  margin: 0 auto;
+  width: 100%;
+  
+  table {
+    border: 1px solid black;
+    border-radius: 5px;
+    border-spacing: 0px;
+    width: 100%;
+    font-size: .7em;
+  }
+
+  th {
+    background-color: #DCB239;
+    color: #DF744A;
+  }
+
+  th, td {
+    padding: 10px;
+    border: 1px solid black;
+  }
+
+  .user {
+    text-align: left;
+  }
+
+  img {
+    height: 20px;
+    width: auto;
+    border-radius: 5px;
+  }
+
+  .selector {
+    cursor: pointer;
+  }
+
+  .active {
+    color: gray;
+    text-decoration: underline;
+  }
+
+}
+
+@media (min-width: 400px) {
+  .camper-list {
+    table {
+      font-size: 0.9em;
+    }
+
+    img {
+      height: 40px;
+    }
+  }
+}
+
+
+@media (min-width: 768px) {
+
+  .camper-list {
+    margin-top: 10px;
+    width: 80%;
+  
+    table {
+      font-size: 1.25em;
+    }
+  }
+
+}
+
