@@ -27,7 +27,7 @@ class PointTypeSelector extends Component {
 			<tr>
 				<th className='points'>Rank</th>
 				<th className='user'>Camper</th>
-				<th ref='recent' className="active points selector" onClick={() => this.handleChange(this.props.recent, 'recent')}>Last 30 days</th>
+				<th ref='recent' className="active points selector" onClick={() => this.handleChange(this.props.recent, 'recent')}>30 days</th>
 				<th ref='alltime' className='points selector' onClick={() => this.handleChange(this.props.alltime, 'alltime')}>All time</th>
 			</tr>
 
