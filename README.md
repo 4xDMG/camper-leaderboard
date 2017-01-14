@@ -42,4 +42,4 @@ npm run deploy
 
 ## Authors
 
-* **Daniel Tait** - *Initial work* - [4xDMG](https://github.com/4xDMG)
+* **Daniel Tait** - [4xDMG](https://github.com/4xDMG)
